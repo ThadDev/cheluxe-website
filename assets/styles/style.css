@@ -427,7 +427,7 @@ nav a:hover {
 }
 .last {
   display: flex;
-  width: 98vw;
+  width: 100vw;
   text-align: center;
   background-color: var(--secondary-color);
   padding: 2em;
