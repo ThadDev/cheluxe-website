@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>your cart</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">CHELUXE <span id="logo-icon"></span></div>
+      <nav>
+        <ul class="nav-links">
+          <a href="/"><li>New arrivals</li></a>
+          <a href="#shop-now"><li>Shop now</li></a>
+          <a href="#styles"><li>Styles</li></a>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <div id="cart-icon" onclick="window.location='cart.html'">
+          <span class="iconify" data-icon="mdi:cart" style="font-size: 30px">
+          </span>
+          <span id="cart-count" style="font-size: x-small">0</span>
+        </div>
+        <span class="iconify" data-icon="mdi:heart-outline"></span>
+        <button
+          id="search-icon"
+          style="background: none; border: none; cursor: pointer; padding: 0%"
+        >
+          <a href="#inv">
+            <span
+              class="iconify"
+              data-icon="mdi:search"
+              style="color: #faf7f2; font-size: 30px"
+            ></span>
+          </a>
+        </button>
+      </div>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+    <section class="her">
+      <main>
+        <div>
+          <h2>Your Cart</h2>
+          <ul id="cart-items"></ul>
+          <p>Total: ₦<span id="cart-total">0</span></p>
+        </div>
+      </main>
+    </section>
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navLinks = document.querySelector(".nav-links");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("active");
+      });
+
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navLinks.classList.remove("active");
+        });
+      });
+    </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src=".//app.js"></script>
+  </body>
+</html>

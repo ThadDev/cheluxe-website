@@ -1,0 +1,84 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Classy ladies fitted gown",
+      "image": "beautiful-african-american-woman-wearing-casual-summer-shirt-smiling-looking-camera-showing-fingers-doing-victory-sign-number-two",
+      "price": 9200,
+      "rating": 4.5,
+      "style": "top"
+    },
+    {
+      "id": 2,
+      "name": "gorgeous and classy ladies gown",
+      "image": "smiling-looking-friendly-showing-number-one",
+      "price": 12000,
+      "rating": 4.3,
+      "style": "ankara"
+    },
+    {
+      "id": 3,
+      "name": "smart and elegant gown",
+      "image": "smiley-woman-making-peace-sign",
+      "price": 10000,
+      "rating": 4.0,
+      "style": "coporate"
+    },
+    {
+      "id": 4,
+      "name": "coporate gown",
+      "image": "assertive-good-looking-woman-with-afro-bushy-hairstyle-shows-okay-gesture",
+      "price": 25000,
+      "rating": 4.7,
+      "style": "coporate"
+    },
+    {
+      "id": 5,
+      "name": "red top",
+      "image": "beautiful-attractive-african-american-woman-posting-play-with-her-curly-afro-hair-yellow-studio-background-copy-space",
+      "price": 9000,
+      "rating": 4.6,
+      "style": "ankara"
+    },
+    {
+      "id": 6,
+      "name": "smart and elegant gown",
+      "image": "darkskinned-woman-red-jacket-shows-fingers-up-pink-background-curly-lady-floral-dress-smiling-isolated-backdrop",
+      "price": 9000,
+      "rating": 4.8,
+      "style": "coporate"
+    },
+    {
+      "id": 7,
+      "name": "red top",
+      "image": "darkskinned-woman-red-jacket-shows-fingers-up-pink-background-curly-lady-floral-dress-smiling-isolated-backdrop",
+      "price": 9000,
+      "rating": 4.2,
+      "style": "ankara"
+    },
+    {
+      "id": 8,
+      "name": "Orange sweater",
+      "image": "interested-woman-posing-with-peace-sign",
+      "price": 12000,
+      "rating": 4.9,
+      "style": "casual"
+    },
+    {
+      "id": 9,
+      "name": "pink top",
+      "image": "bg-image-for-cheluxe",
+      "price": 21000,
+      "rating": 4.1,
+      "style": "casual"
+    },
+    {
+      "id": 10,
+      "name": "coporate top",
+      "image": "lovable-girl-posing-with-peace-sign-while-sitting-floor-with-her-dog-portrait-red-haired-pleased-woman-playing-with-puppy-removebg-preview",
+      "price": 15000,
+      "rating": 4.4,
+      "style": "coporate"
+    }
+  ]
+}

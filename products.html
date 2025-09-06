@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cheluxe products</title>
+  </head>
+  <link rel="stylesheet" href="/assets/styles/style.css" />
+  <body>
+    <header>
+      <div class="logo">CHELUXE <span id="logo-icon"></span></div>
+      <nav>
+        <ul class="nav-links">
+          <a href="/"><li>New arrivals</li></a>
+          <a href="#shop-now"><li>Shop now</li></a>
+          <a href="#styles"><li>Styles</li></a>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <div id="cart-icon" onclick="window.location='cart.html'">
+          <span class="iconify" data-icon="mdi:cart" style="font-size: 30px">
+          </span>
+          <span id="cart-count" style="font-size: x-small">0</span>
+        </div>
+        <span class="iconify" data-icon="mdi:heart-outline"></span>
+        <button
+          id="search-icon"
+          style="background: none; border: none; cursor: pointer; padding: 0%"
+        >
+          <a href="#inv">
+            <span
+              class="iconify"
+              data-icon="mdi:search"
+              style="color: #faf7f2; font-size: 30px"
+            ></span>
+          </a>
+        </button>
+      </div>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+    <section id="p-hero">
+      <div>
+        <h2 id="products-heading">Products</h2>
+        <div id="product-list"></div>
+      </div>
+    </section>
+    <script src="app.js"></script>
+    <script>
+      loadProductsByStyle();
+    </script>
+  </body>
+</html>

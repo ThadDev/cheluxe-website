@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cheluxe</title>
+    <link rel="stylesheet" href="assets/styles/style.css" />
+<script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<body>
+    <header>
+      <div class="logo">CHELUXE <span id="logo-icon"></span></div>
+      <nav >
+        <ul class="nav-links">
+          <a href="/"><li>New arrivals</li></a>
+          <a href="#shop-now"><li>Shop now</li></a>
+          <a href="#styles"><li>Styles</li></a>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <div id="cart-icon" onclick="window.location='cart.html'">
+    <span class="iconify" data-icon="mdi:cart" style="font-size:30px;"> </span>
+    <span id="cart-count" style="font-size:x-small;">0</span>
+  </div>
+        <span class="iconify" data-icon="mdi:heart-outline"></span>
+         <button id="search-icon" style="background:none; border:none; cursor:pointer; padding:0%" >
+          <a href="#inv">
+  <span class="iconify" data-icon="mdi:search" style="color: #faf7f2; font-size:30px;" ></span>
+          </a>
+</button>
+      </div>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-intro">
+            <h1>...Because your wardrobe <br> deserves quality </h1>
+            <p>Slay effortlessly with our <br> curated pieces and pre-order wears</p>
+            <a href="#inv"><button class="btn-fill1">Shop now</button></a>
+            </div>
+            <div class="hero-image">
+              <img src="https://res.cloudinary.com/dctgcp7sv/image/upload/v1757055275/Adobe_Express_-_file-cropped_zwfgqk.webp" alt="">
+            </div>
+            <div id="inv"></div>
+            
+        </section>
+        <section class="products-section" id="new-arrivals">
+           <div class="heading">
+            <h1>New arrivals</h1>
+             <div id="searchContainer" style="display: none;">
+            <input type="text" id="search" placeholder="Type to search..." />
+          </div>
+           </div>
+            <div id="product-list"></div>
+            <div id="view-btn">
+            <button class="btn-fill" id="view-more">View More</button>
+            </div>
+
+        </section>
+        <section id="category">
+          <h1 data-aos="fade-up">Browse by category</h1>
+          <div class="category">
+           <a href="/products.html?style=casual" class="style-card" data-style="casual" data-aos="fade-up">
+            <img src=".//optimized/desktop/beautiful-african-american-woman-wearing-casual-summer-shirt-smiling-looking-camera-showing-fingers-doing-victory-sign-number-two.webp" alt="">
+            <span id="link"><span><p>Casual</p></span><span class="iconify" data-icon="mdi:arrow-right"></span></span>
+           </a>
+           <a href="/products.html?style=ankara" class="style-card" data-style="ankara" data-aos="fade-up">
+            <img src="./optimized/desktop/beautiful-african-american-woman-wearing-casual-summer-shirt-smiling-looking-camera-showing-fingers-doing-victory-sign-number-two.webp " alt="">
+              <span id="link"><span><p>Ankara</p></span><span class="iconify" data-icon="mdi:arrow-right"></span></span>
+          </a>
+          <a href="/products.html?style=coporate" class="style-card" data-style="coporate" data-aos="fade-up"><img src="./assets/images/smiling-looking-friendly-showing-number-one.jpg" alt="">
+            <span id="link"><span><p>Coporate</p></span><span class="iconify" data-icon="mdi:arrow-right"></span></span></a>
+          <a href="/products.html?style=top" class="style-card" data-style="tops" data-aos="fade-up"><img src="./optimized/desktop/interested-woman-posing-with-peace-sign.webp" alt="">
+            <span id="link"><span><p>Tops</p></span ><span class="iconify" data-icon="mdi:arrow-right"></span></span></a>
+          </div>
+        </section>
+
+    </main>
+    <footer>
+      <div class="footer">
+      <h6>Founded by Ruth.O</h6>
+
+      <div class="footer-links">
+        <a href=""><span class="iconify" data-icon="mdi:facebook"></span></a>
+        <a href="https://wa.me/234 816 606 5517"><span class="iconify" data-icon="mdi:whatsapp"></span></a>
+        <a href=""><span class="iconify" data-icon="mdi:twitter"></span></a>
+        <a href=""><span class="iconify" data-icon="mdi:instagram"></span></a>
+      </div>
+        <h1>Subscribe to our newsletter to get latest arriivals</h1>
+        <div class="foote-mail">
+          <input id="email" type="email" placeholder=" your email" >
+        <button type="submit" id="btn1">Subscribe</button>
+        </div>
+        <p id="copy">
+          <a
+            style="text-decoration: none"
+            href="https://thaddeus-ugwu-portfolio.vercel.app/"
+          >
+            <span id="thaddev" style="font-size: large; font-weight: bold"
+              ><span style="color: #d4af37;">built by</span><span id="thadd">ThadDev</span><span
+                class="iconify"
+                data-icon="mdi:arrow-top-right"
+              ></span></span
+          ></a>
+        </p>
+        
+        <div class="last">
+          <p>©Copyright Cheluxe wears 2025 <br /></p>
+        </div>
+      </div>
+    </footer>
+    <script src="app.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+       AOS.init({
+    duration: 800, 
+    once: false,    
+  });
+      const hamburger = document.querySelector(".hamburger");
+      const navLinks = document.querySelector(".nav-links");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navLinks.classList.toggle("active");
+      });
+
+      document.querySelectorAll(".nav-links a").forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navLinks.classList.remove("active");
+        });
+      });
+
+     document.querySelectorAll("style-card").forEach((card) => {
+  card.addEventListener("click", () => {
+    const style = card.dataset.style;
+    window.location = `products.html?style=${encodeURIComponent(style)}`;
+  });
+});
+
+    </script>
+  </body>
+</html>
