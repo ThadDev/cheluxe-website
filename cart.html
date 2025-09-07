@@ -54,6 +54,33 @@
           <h2>Your Cart</h2>
           <ul id="cart-items"></ul>
           <p>Total: ₦<span id="cart-total">0</span></p>
+          <button id="order-btn" class="btn-fill">Place Order</button>
+
+          <div id="order-form" style="display: none; margin-top: 15px">
+            <div class="order-form">
+              <input
+                type="text"
+                id="customer-name"
+                placeholder="Your name"
+                required
+              />
+              <input
+                type="tel"
+                id="customer-phone"
+                placeholder="+234XXXXXXXXXX"
+                required
+              />
+              <input
+                type="text"
+                id="customer-location"
+                placeholder="Enter your location"
+                required
+              />
+              <button id="confirm-order" class="btn-fill1">
+                Confirm Order
+              </button>
+            </div>
+          </div>
         </div>
       </main>
     </section>

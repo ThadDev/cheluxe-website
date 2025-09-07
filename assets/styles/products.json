@@ -2,83 +2,203 @@
   "products": [
     {
       "id": 1,
-      "name": "Classy ladies fitted gown",
-      "image": "beautiful-african-american-woman-wearing-casual-summer-shirt-smiling-looking-camera-showing-fingers-doing-victory-sign-number-two",
-      "price": 9200,
+      "name": "Classy ladies cord gown",
+      "image": "pic17",
+      "price": 15000,
       "rating": 4.5,
-      "style": "top"
+      "style": "gown"
     },
     {
       "id": 2,
-      "name": "gorgeous and classy ladies gown",
-      "image": "smiling-looking-friendly-showing-number-one",
+      "name": "Plain corset top and pleat skirt",
+      "image": "pic16",
       "price": 12000,
       "rating": 4.3,
-      "style": "ankara"
+      "style": ["top", "skirt"]
     },
     {
       "id": 3,
-      "name": "smart and elegant gown",
-      "image": "smiley-woman-making-peace-sign",
-      "price": 10000,
+      "name": "Mini pleat skirt",
+      "image": "pic15",
+      "price": 8000,
       "rating": 4.0,
-      "style": "coporate"
+      "style": "skirt"
     },
     {
       "id": 4,
-      "name": "coporate gown",
-      "image": "assertive-good-looking-woman-with-afro-bushy-hairstyle-shows-okay-gesture",
-      "price": 25000,
+      "name": "Ballon skirk",
+      "image": "pic14",
+      "price": 7000,
       "rating": 4.7,
-      "style": "coporate"
+      "style": "skirt"
     },
     {
       "id": 5,
-      "name": "red top",
-      "image": "beautiful-attractive-african-american-woman-posting-play-with-her-curly-afro-hair-yellow-studio-background-copy-space",
+      "name": "Tennis skirt",
+      "image": "pic13",
       "price": 9000,
       "rating": 4.6,
-      "style": "ankara"
+      "style": "skirt"
     },
     {
       "id": 6,
-      "name": "smart and elegant gown",
-      "image": "darkskinned-woman-red-jacket-shows-fingers-up-pink-background-curly-lady-floral-dress-smiling-isolated-backdrop",
+      "name": "Cottage skirt",
+      "image": "pic12",
       "price": 9000,
       "rating": 4.8,
-      "style": "coporate"
+      "style": "skirt"
     },
     {
       "id": 7,
-      "name": "red top",
-      "image": "darkskinned-woman-red-jacket-shows-fingers-up-pink-background-curly-lady-floral-dress-smiling-isolated-backdrop",
-      "price": 9000,
+      "name": "Rena gown",
+      "price": 20000,
+      "image": "pic11",
       "rating": 4.2,
-      "style": "ankara"
+      "style": ["gown", "coporate"]
     },
     {
       "id": 8,
-      "name": "Orange sweater",
-      "image": "interested-woman-posing-with-peace-sign",
+      "name": "Ankara gown",
+      "image": "pic10",
       "price": 12000,
       "rating": 4.9,
-      "style": "casual"
+      "style": ["ankara wear", "gown"]
     },
     {
       "id": 9,
-      "name": "pink top",
-      "image": "bg-image-for-cheluxe",
-      "price": 21000,
+      "name": "Pleat top & skirt",
+      "image": "pic9",
+      "price": 9000,
       "rating": 4.1,
-      "style": "casual"
+      "style": ["top", "skirk"]
     },
     {
       "id": 10,
-      "name": "coporate top",
-      "image": "lovable-girl-posing-with-peace-sign-while-sitting-floor-with-her-dog-portrait-red-haired-pleased-woman-playing-with-puppy-removebg-preview",
-      "price": 15000,
+      "name": "Ankara gown",
+      "image": "pic8",
+      "price": 9000,
       "rating": 4.4,
-      "style": "coporate"
+      "style": ["ankara wear", "gown"]
+    },
+    {
+      "id": 11,
+      "name": "Lulu gown",
+      "image": "pic7",
+      "price": 17000,
+      "rating": 4.8,
+      "style": "gown"
+    },
+    {
+      "id": 12,
+      "name": "Ankara piece",
+      "image": "pic6",
+      "price": 9500,
+      "rating": 4.3,
+      "style": ["ankara wear", "gown"]
+    },
+    {
+      "id": 13,
+      "name": "Onx top",
+      "image": "pic5",
+      "price": 6000,
+      "rating": 4.9,
+      "style": "top"
+    },
+    {
+      "id": 14,
+      "name": "Heart shaped gown",
+      "image": "pic18",
+      "price": 9000,
+      "rating": 4.6,
+      "style": "gown"
+    },
+    {
+      "id": 15,
+      "name": "Lulu gown",
+      "image": "pic19",
+      "price": 17000,
+      "rating": 4.7,
+      "style": "gown"
+    },
+    {
+      "id": 16,
+      "name": "Shalom piece",
+      "image": "pic20",
+      "price": 11000,
+      "rating": 4.4,
+      "style": ["gown", "ankara"]
+    },
+    {
+      "id": 17,
+      "name": "Nova gown",
+      "image": "pic21",
+      "price": 12000,
+      "rating": 4.2,
+      "style": "gown"
+    },
+    {
+      "id": 18,
+      "name": "Ankara piece",
+      "image": "pic4",
+      "price": 9000,
+      "rating": 4.6,
+      "style": ["gown", "ankara"]
+    },
+    {
+      "id": 19,
+      "name": "Onx veil ",
+      "image": "pic3",
+      "price": 9000,
+      "rating": 4.5,
+      "style": "gown"
+    },
+    {
+      "id": 20,
+      "name": "Onx veil ",
+      "image": "pic2",
+      "price": 9000,
+      "rating": 4.8,
+      "style": "gown"
+    },
+    {
+      "id": 21,
+      "name": "Red veil",
+      "image": "pic1",
+      "price": 10000,
+      "rating": 4.3,
+      "style": "gown"
+    },
+    {
+      "id": 22,
+      "name": "Rena gown",
+      "image": "pic22",
+      "price": 20000,
+      "rating": 4.9,
+      "style": "gown"
+    },
+    {
+      "id": 23,
+      "name": "Ankara piece",
+      "image": "pic23",
+      "price": 17000,
+      "rating": 4.4,
+      "style": "ankara wear"
+    },
+    {
+      "id": 24,
+      "name": "Beba piece",
+      "image": "pic24",
+      "price": 9000,
+      "rating": 4.7,
+      "style": "ankara wear"
+    },
+    {
+      "id": 25,
+      "name": "Nova top",
+      "image": "pic25",
+      "price": 4000,
+      "rating": 5.0,
+      "style": "top"
     }
   ]
 }

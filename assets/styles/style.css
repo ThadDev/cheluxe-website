@@ -330,6 +330,55 @@ nav a:hover {
   font-size: 20px;
   color: #d9534f; /* red for delete */
 }
+/* Order Form Container */
+#order-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 15px auto;
+  display: none; /* stays hidden until shown */
+  flex-direction: column;
+  gap: 2em;
+}
+
+/* Input fields */
+#order-form input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.2s ease-in-out;
+}
+
+#order-form input:focus {
+  border-color: var(--primary-color); /* your primary theme color */
+  box-shadow: 0 0 6px var(--primary-color, 0.4);
+}
+
+.order-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+#confirm-order {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#confirm-order:hover {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+}
 
 /* end of cart page, product cont... */
 .product-card {
@@ -375,7 +424,9 @@ nav a:hover {
   font-weight: bold;
   color: var(--primary-color);
 }
-
+#products-heading {
+  margin-left: 1em;
+}
 .product-card .rating {
   color: gold;
   font-size: 1rem;
@@ -500,10 +551,45 @@ nav a:hover {
 footer h6 {
   font-size: x-large;
 }
+#nav-icons {
+  display: none;
+}
+#cart-desktop {
+  display: none;
+}
+/* Call-to-action breathing animation */
+/* Call-to-action breathing animation */
+.cta-breathing {
+  animation: breathing 2.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes breathing {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(212, 175, 55, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.7);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(212, 175, 55, 0.4);
+  }
+}
+
 /* Mobile nav behavior */
 @media (max-width: 768px) {
   footer h1 {
     font-size: 10px;
+  }
+  #cart-desktop {
+    display: block;
+  }
+  #nav-icons {
+    display: block;
+    margin-top: 3em;
   }
   footer h6 {
     font-size: large;

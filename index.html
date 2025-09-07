@@ -10,12 +10,22 @@
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <body>
     <header>
-      <div class="logo">CHELUXE <span id="logo-icon"></span></div>
+     <a href="/index.html" style="text-decoration: none;"> <div class="logo">CHELUXE <span id="logo-icon"></span></div></a>
       <nav >
         <ul class="nav-links">
-          <a href="/"><li>New arrivals</li></a>
-          <a href="#shop-now"><li>Shop now</li></a>
-          <a href="#styles"><li>Styles</li></a>
+          <a href="/"><li>Home</li></a>
+          <a href="#inv"><li>New arrivals</li></a>
+          <a href="/cart.html" id="cart-desktop"><li>cart</li></a>
+          <a href="/products.html?style=gown" data-style="gown"><li>Gowns</li></a>
+          <a href="products.html?style=skirt"><li>skirts</li></a>
+          <a href="/products.html?style=ankara wear"><li>Ankara</li></a>
+          <a href="/products.html?style=top"><li>Tops</li></a>
+          <div class="footer-links"  id="nav-icons">
+        <a href=""><span class="iconify" data-icon="mdi:facebook"></span></a>
+        <a href="https://wa.me/234 816 606 5517"><span class="iconify" data-icon="mdi:whatsapp"></span></a>
+        <a href=""><span class="iconify" data-icon="mdi:twitter"></span></a>
+        <a href=""><span class="iconify" data-icon="mdi:instagram"></span></a>
+      </div>
         </ul>
       </nav>
       <div class="nav-actions">
@@ -41,7 +51,7 @@
             <div class="hero-intro">
             <h1>...Because your wardrobe <br> deserves quality </h1>
             <p>Slay effortlessly with our <br> curated pieces and pre-order wears</p>
-            <a href="#inv"><button class="btn-fill1">Shop now</button></a>
+            <a href="#inv"><button class="btn-fill1 cta-breathing">Shop now</button></a>
             </div>
             <div class="hero-image">
               <img src="https://res.cloudinary.com/dctgcp7sv/image/upload/v1757055275/Adobe_Express_-_file-cropped_zwfgqk.webp" alt="">
@@ -58,24 +68,24 @@
            </div>
             <div id="product-list"></div>
             <div id="view-btn">
-            <button class="btn-fill" id="view-more">View More</button>
+            <button class="btn-fill cta-breathing" id="view-more">View More</button>
             </div>
 
         </section>
         <section id="category">
           <h1 data-aos="fade-up">Browse by category</h1>
           <div class="category">
-           <a href="/products.html?style=casual" class="style-card" data-style="casual" data-aos="fade-up">
-            <img src=".//optimized/desktop/beautiful-african-american-woman-wearing-casual-summer-shirt-smiling-looking-camera-showing-fingers-doing-victory-sign-number-two.webp" alt="">
-            <span id="link"><span><p>Casual</p></span><span class="iconify" data-icon="mdi:arrow-right"></span></span>
+           <a href="/products.html?style=skirt" class="style-card" data-style="skirt" data-aos="fade-up">
+            <img src=".//optimized/desktop/pic15.webp" alt="">
+            <span id="link"><span><p>Skirts</p></span><span class="iconify" data-icon="mdi:arrow-right"></span></span>
            </a>
-           <a href="/products.html?style=ankara" class="style-card" data-style="ankara" data-aos="fade-up">
-            <img src="./optimized/desktop/beautiful-african-american-woman-wearing-casual-summer-shirt-smiling-looking-camera-showing-fingers-doing-victory-sign-number-two.webp " alt="">
+           <a href="/products.html?style=ankara wear" class="style-card" data-style="ankara" data-aos="fade-up">
+            <img src="./optimized/desktop//pic20.webp " alt="">
               <span id="link"><span><p>Ankara</p></span><span class="iconify" data-icon="mdi:arrow-right"></span></span>
           </a>
-          <a href="/products.html?style=coporate" class="style-card" data-style="coporate" data-aos="fade-up"><img src="./optimized/desktop/beautiful-attractive-african-american-woman-posting-play-with-her-curly-afro-hair-yellow-studio-background-copy-space.webp" alt="">
-            <span id="link"><span><p>Coporate</p></span><span class="iconify" data-icon="mdi:arrow-right"></span></span></a>
-          <a href="/products.html?style=top" class="style-card" data-style="tops" data-aos="fade-up"><img src="./optimized/desktop/interested-woman-posing-with-peace-sign.webp" alt="">
+          <a href="/products.html?style=gown" class="style-card" data-style="gown" data-aos="fade-up"><img src="/optimized/desktop/pic17.webp" alt="">
+            <span id="link"><span><p>Gowns</p></span><span class="iconify" data-icon="mdi:arrow-right"></span></span></a>
+          <a href="/products.html?style=top" class="style-card" data-style="top" data-aos="fade-up"><img src="./optimized/desktop/pic25.webp" alt="">
             <span id="link"><span><p>Tops</p></span ><span class="iconify" data-icon="mdi:arrow-right"></span></span></a>
           </div>
         </section>

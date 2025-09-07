@@ -1,108 +1,3 @@
-// fetch("assets/styles/products.json")
-//   .then((res) => res.json())
-//   .then((data) => {
-//     const container = document.getElementById("product-list");
-//     container.innerHTML = "";
-
-//     data.products.slice(0, 6).forEach((product) => {
-//       const formattedPrice = `₦ ${product.price.toLocaleString()}`;
-
-//       const item = document.createElement("div");
-//       item.className = "product-card";
-
-//       item.innerHTML = `
-//         <img
-//           src="optimized/mobile/${product.image}.webp"
-//           srcset="
-//             optimized/mobile/${product.image}.webp 400w,
-//             optimized/tablet/${product.image}.webp 768w,
-//             optimized/desktop/${product.image}.webp 1200w
-//           "
-//           sizes="(max-width: 768px) 100vw, 50vw"
-//           alt="${product.name}"
-//           loading="lazy"
-//           decoding="async"
-//           width="300"
-//           height="300"
-//         >
-//         <h3>${product.name}</h3>
-//         <p class="price">${formattedPrice}</p>
-//         <p class="rating">⭐ ${product.rating}</p>
-//         <button>Add to Cart</button>
-//       `;
-
-//       container.appendChild(item);
-//     });
-//   })
-//   .catch((err) => console.error("Error fetching products:", err));
-
-// //2
-// let productsData = []; // store all products
-// let visibleCount = 4; // how many products shown initially
-
-// fetch("assets/styles/products.json")
-//   .then((res) => res.json())
-//   .then((data) => {
-//     productsData = data.products;
-//     renderProducts();
-//   })
-//   .catch((err) => console.error("Error fetching products:", err));
-
-// function renderProducts() {
-//   const container = document.getElementById("product-list");
-
-//   // only render the next set, don’t reset container
-//   productsData.slice(visibleCount - 4, visibleCount).forEach((product) => {
-//     const formattedPrice = `₦ ${product.price.toLocaleString()}`;
-//     const item = document.createElement("div");
-//     item.setAttribute("data-aos", "fade-up");
-//     item.className = "product-card";
-
-//     item.innerHTML = `
-//       <img
-//         src="optimized/mobile/${product.image}.webp"
-//         srcset="
-//           optimized/mobile/${product.image}.webp 400w,
-//           optimized/tablet/${product.image}.webp 768w,
-//           optimized/desktop/${product.image}.webp 1200w
-//         "
-//         sizes="(max-width: 768px) 100vw, 50vw"
-//         alt="${product.name}"
-//         loading="lazy"
-//         decoding="async"
-//         width="300"
-//         height="300"
-//       >
-//       <h3>${product.name}</h3>
-//       <p class="price">${formattedPrice}</p>
-//       <p class="rating">⭐ ${product.rating}</p>
-//       <button>Add to Cart</button>
-//     `;
-
-//     container.appendChild(item);
-//   });
-
-//   // hide button if no more products
-//   if (visibleCount >= productsData.length) {
-//     document.getElementById("view-more").style.display = "none";
-//   }
-// }
-
-// document.getElementById("view-more").addEventListener("click", () => {
-//   visibleCount += 4;
-//   renderProducts();
-// });
-// document.addEventListener("DOMContentLoaded", () => {
-//   const icon = document.getElementById("search-icon");
-//   const container = document.getElementById("searchContainer");
-
-//   icon.addEventListener("click", () => {
-//     container.style.display =
-//       container.style.display === "none" ? "block" : "none";
-//   });
-// });
-
-//3
 let productsData = [];
 let visibleCount = 4;
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -220,10 +115,20 @@ function loadProductDetails() {
       }
 
       detailsDiv.innerHTML = `
-        <img 
-          src="optimized/desktop/${product.image}.webp" 
-          alt="${product.name}" 
-          width="400">
+          <img 
+        src="optimized/mobile/${product.image}.webp"
+        srcset="
+          optimized/mobile/${product.image}.webp 400w,
+          optimized/tablet/${product.image}.webp 768w,
+          optimized/desktop/${product.image}.webp 1200w
+        "
+        sizes="(max-width: 768px) 100vw, 50vw"
+        alt="${product.name}"
+        loading="lazy"
+        decoding="async"
+        width="300"
+        height="300"
+      >
         <h2 >${product.name}</h2>
         <p class"price">₦${product.price.toLocaleString()}</p>
         <p>${product.description || "No description available."}</p>
@@ -287,7 +192,7 @@ function decreaseQuantity(index) {
   if (cart[index].quantity > 1) {
     cart[index].quantity--;
   } else {
-    removeFromCart(index); // remove if it hits 0
+    removeFromCart(index);
   }
   renderCartPage();
 }
@@ -296,7 +201,7 @@ function decreaseQuantity(index) {
 const viewMoreBtn = document.getElementById("view-more");
 if (viewMoreBtn) {
   viewMoreBtn.addEventListener("click", () => {
-    visibleCount += 6;
+    visibleCount = Math.min(visibleCount + 4, productsData.length);
     renderProducts();
   });
 }
@@ -321,63 +226,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (document.getElementById("cart-items")) renderCartPage();
   updateCartCount();
 });
-
-//param
-// // 📦 Load products by style (products.html?style=Sneakers)
+// 📦 Load products by style (products.html?style=Sneakers)
 function loadProductsByStyle() {
-  //   const heading = document.getElementById("products-heading");
-  //   const container = document.getElementById("product-list");
-  //   if (!heading || !container) return;
-
-  //   const params = new URLSearchParams(window.location.search);
-  //   const style = params.get("style");
-
-  //   fetch("assets/styles/products.json")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       const filtered = data.products.filter(
-  //         (p) => p.style.toLowerCase() === style.toLowerCase()
-  //       );
-
-  //       heading.textContent = style ? `Browse by: ${style}` : "All Products";
-
-  //       container.innerHTML = "";
-
-  //       if (filtered.length === 0) {
-  //         container.innerHTML = `<p>No ${style} found</p>`;
-  //         return;
-  //       }
-
-  //       filtered.forEach((product) => {
-  //         const formattedPrice = `₦ ${product.price.toLocaleString()}`;
-  //         const div = document.createElement("div");
-  //         div.classList.add("product-card");
-
-  //         div.innerHTML = `
-  //           <img src="optimized/mobile/${product.image}.webp" alt="${product.name}" width="200">
-  //           <h3>${product.name}</h3>
-  //           <p>${formattedPrice}</p>
-  //           <button class="add-to-cart-btn">Add to Cart</button>
-  //         `;
-
-  //         // click → go to product details
-  //         div.addEventListener("click", (e) => {
-  //           if (!e.target.classList.contains("add-to-cart-btn")) {
-  //             window.location = `product.html?id=${product.id}`;
-  //           }
-  //         });
-
-  //         // add to cart
-  //         div.querySelector(".add-to-cart-btn").addEventListener("click", (e) => {
-  //           e.stopPropagation();
-  //           addToCart(product);
-  //         });
-
-  //         container.appendChild(div);
-  //       });
-  //     });
-  // }
-
   const heading = document.getElementById("products-heading");
   const container = document.getElementById("product-list");
   if (!heading || !container) return;
@@ -388,16 +238,25 @@ function loadProductsByStyle() {
   fetch("assets/styles/products.json")
     .then((res) => res.json())
     .then((data) => {
-      const filtered = data.products.filter(
-        (p) => p.style.toLowerCase() === style.toLowerCase()
-      );
+      const filtered = data.products.filter((p) => {
+        if (Array.isArray(p.style)) {
+          return p.style
+            .map((s) => s.toLowerCase())
+            .includes(style.toLowerCase());
+        } else if (typeof p.style === "string") {
+          return p.style.toLowerCase() === style.toLowerCase();
+        }
+        return false;
+      });
 
-      heading.textContent = style ? `${style}` : "All Products";
+      heading.textContent = style
+        ? `${style.charAt(0).toUpperCase() + style.slice(1)}s`
+        : "All Products";
 
       container.innerHTML = "";
 
       if (filtered.length === 0) {
-        container.innerHTML = `<p>No ${style} found</p>`;
+        container.innerHTML = `<p>No ${style}s found</p>`;
         return;
       }
 
@@ -407,7 +266,20 @@ function loadProductsByStyle() {
         div.classList.add("product-card");
 
         div.innerHTML = `
-          <img src="optimized/mobile/${product.image}.webp" alt="${product.name}" width="200">
+            <img 
+        src="optimized/mobile/${product.image}.webp"
+        srcset="
+          optimized/mobile/${product.image}.webp 400w,
+          optimized/tablet/${product.image}.webp 768w,
+          optimized/desktop/${product.image}.webp 1200w
+        "
+        sizes="(max-width: 768px) 100vw, 50vw"
+        alt="${product.name}"
+        loading="lazy"
+        decoding="async"
+        width="300"
+        height="300"
+      >
           <h3>${product.name}</h3>
           <p>${formattedPrice}</p>
           <button class="add-to-cart-btn">Add to Cart</button>
@@ -430,3 +302,77 @@ function loadProductsByStyle() {
       });
     });
 }
+const orderBtn = document.getElementById("order-btn");
+if (orderBtn) {
+  orderBtn.style.display = cart.length > 0 ? "block" : "none";
+}
+
+// 🟢 WhatsApp Order Logic
+document.addEventListener("DOMContentLoaded", () => {
+  const orderBtn = document.getElementById("order-btn");
+  const orderForm = document.getElementById("order-form");
+
+  if (orderBtn) {
+    // Step 1: show form when clicking "Place Order"
+    orderBtn.addEventListener("click", () => {
+      if (
+        orderForm.style.display === "none" ||
+        orderForm.style.display === ""
+      ) {
+        orderForm.style.display = "block";
+      } else {
+        orderForm.style.display = "none";
+      }
+      orderBtn.style.display = "none";
+    });
+  }
+
+  const confirmBtn = document.getElementById("confirm-order");
+  if (confirmBtn) {
+    // Step 2: confirm order and redirect to WhatsApp
+    confirmBtn.addEventListener("click", () => {
+      const name = document.getElementById("customer-name").value.trim();
+      const phone = document.getElementById("customer-phone").value.trim();
+      const location = document
+        .getElementById("customer-location")
+        .value.trim();
+
+      if (!name || !phone || !location) {
+        alert("Please fill in your name, phone number, and location.");
+        return;
+      }
+
+      let message = `🛒 New Order\n\n`;
+      cart.forEach((item) => {
+        message += `${item.name} x${item.quantity} - ₦${(
+          item.price * item.quantity
+        ).toLocaleString()}\n`;
+      });
+
+      message += `\nTotal: ₦${cart
+        .reduce((sum, item) => sum + item.price * item.quantity, 0)
+        .toLocaleString()}`;
+
+      message += `\n\n👤 Name: ${name}`;
+      message += `\n📞 Phone: ${phone}`;
+      message += `\n📍 Location: ${location}`;
+
+      const retailerNumber = "2349074674756"; // your WhatsApp number
+      const url = `https://wa.me/${retailerNumber}?text=${encodeURIComponent(
+        message
+      )}`;
+
+      // 🟢 Open WhatsApp
+      window.open(url, "_blank");
+
+      // 🟢 Clear cart after order
+      cart = [];
+      localStorage.removeItem("cart");
+      renderCartPage();
+      updateCartCount();
+
+      // Hide the form again
+      orderForm.style.display = "none";
+    });
+  }
+});
