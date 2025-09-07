@@ -2,9 +2,10 @@ let productsData = [];
 let visibleCount = 4;
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+// ==================== 🛒 CART FUNCTIONS ==================== //
 const cartCount = document.getElementById("cart-count");
 
-// 🛒 Update cart badge
+// Update cart badge
 function updateCartCount() {
   if (cartCount) {
     const count = cart.reduce((sum, item) => sum + item.quantity, 0);
@@ -13,7 +14,7 @@ function updateCartCount() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-// 🛒 Add to cart
+// Add to cart
 function addToCart(product) {
   const existing = cart.find((item) => item.id === product.id);
   if (existing) {
@@ -24,16 +25,33 @@ function addToCart(product) {
   updateCartCount();
 }
 
-// 🛒 Remove item
+// Remove item from cart
 function removeFromCart(index) {
   cart.splice(index, 1);
   updateCartCount();
   renderCartPage();
 }
 
-// 📦 Render product listing (index.html)
+// Increase quantity
+function increaseQuantity(index) {
+  cart[index].quantity++;
+  renderCartPage();
+}
+
+// Decrease quantity
+function decreaseQuantity(index) {
+  if (cart[index].quantity > 1) {
+    cart[index].quantity--;
+  } else {
+    removeFromCart(index);
+  }
+  renderCartPage();
+}
+
+// ==================== 📦 PRODUCT LISTING ==================== //
 function renderProducts() {
   const container = document.getElementById("product-list");
+  if (!container) return;
 
   productsData.slice(visibleCount - 4, visibleCount).forEach((product) => {
     const formattedPrice = `₦ ${product.price.toLocaleString()}`;
@@ -71,7 +89,7 @@ function renderProducts() {
 
     // add to cart button
     item.querySelector(".add-to-cart-btn").addEventListener("click", (e) => {
-      e.stopPropagation(); // prevent redirect when clicking button
+      e.stopPropagation();
       addToCart(product);
     });
 
@@ -85,7 +103,6 @@ function renderProducts() {
   }
 }
 
-// 📦 Load all products (used on index.html)
 function loadProducts() {
   fetch("assets/styles/products.json")
     .then((res) => res.json())
@@ -96,7 +113,7 @@ function loadProducts() {
     .catch((err) => console.error("Error fetching products:", err));
 }
 
-// 📦 Load product details (product.html)
+// ==================== 📦 PRODUCT DETAILS ==================== //
 function loadProductDetails() {
   const detailsDiv = document.getElementById("product-details");
   if (!detailsDiv) return;
@@ -115,22 +132,22 @@ function loadProductDetails() {
       }
 
       detailsDiv.innerHTML = `
-          <img 
-        src="optimized/mobile/${product.image}.webp"
-        srcset="
-          optimized/mobile/${product.image}.webp 400w,
-          optimized/tablet/${product.image}.webp 768w,
-          optimized/desktop/${product.image}.webp 1200w
-        "
-        sizes="(max-width: 768px) 100vw, 50vw"
-        alt="${product.name}"
-        loading="lazy"
-        decoding="async"
-        width="300"
-        height="300"
-      >
-        <h2 >${product.name}</h2>
-        <p class"price">₦${product.price.toLocaleString()}</p>
+        <img 
+          src="optimized/mobile/${product.image}.webp"
+          srcset="
+            optimized/mobile/${product.image}.webp 400w,
+            optimized/tablet/${product.image}.webp 768w,
+            optimized/desktop/${product.image}.webp 1200w
+          "
+          sizes="(max-width: 768px) 100vw, 50vw"
+          alt="${product.name}"
+          loading="lazy"
+          decoding="async"
+          width="300"
+          height="300"
+        >
+        <h2>${product.name}</h2>
+        <p class="price">₦${product.price.toLocaleString()}</p>
         <p>${product.description || "No description available."}</p>
         <p class="rating">⭐ ${product.rating}</p>
         <button class="view more btn-fill" id="add-to-cart-btn">Add to Cart</button>
@@ -138,15 +155,13 @@ function loadProductDetails() {
 
       document
         .getElementById("add-to-cart-btn")
-        .addEventListener("click", () => {
-          addToCart(product);
-        });
+        .addEventListener("click", () => addToCart(product));
     });
 
   updateCartCount();
 }
 
-// 🛒 Render cart page (cart.html)
+// ==================== 🛒 CART PAGE ==================== //
 function renderCartPage() {
   const cartItems = document.getElementById("cart-items");
   const cartTotal = document.getElementById("cart-total");
@@ -159,104 +174,68 @@ function renderCartPage() {
     total += item.price * item.quantity;
     const li = document.createElement("li");
     li.innerHTML = `
-    <divclass="cart-img">
-  <img src="optimized/mobile/${item.image}.webp">
-   ₦${item.price.toLocaleString()} 
-   </div> <br/>
-  <span class="item-name">${item.name}</span> 
-    <div class="cart-btn">
-  <button class="qty-btn" onclick="decreaseQuantity(${index})">−</button>
-  <span class="quantity">${item.quantity}</span>
-  <button class="qty-btn" onclick="increaseQuantity(${index})">+</button>
-  <button onclick="removeFromCart(${index})">
-    <span class="iconify" data-icon="mdi:trash"></span>
-  </button>
-  </div>
-`;
-
+      <div class="cart-img">
+        <img src="optimized/mobile/${item.image}.webp">
+        ₦${item.price.toLocaleString()} 
+      </div><br/>
+      <span class="item-name">${item.name}</span> 
+      <div class="cart-btn">
+        <button class="qty-btn" onclick="decreaseQuantity(${index})">−</button>
+        <span class="quantity">${item.quantity}</span>
+        <button class="qty-btn" onclick="increaseQuantity(${index})">+</button>
+        <button onclick="removeFromCart(${index})">
+          <span class="iconify" data-icon="mdi:trash"></span>
+        </button>
+      </div>
+    `;
     cartItems.appendChild(li);
   });
 
   cartTotal.textContent = total.toLocaleString();
   updateCartCount();
 }
-
-// ➕ Increase quantity
-function increaseQuantity(index) {
-  cart[index].quantity++;
-  renderCartPage();
-}
-
-// ➖ Decrease quantity
-function decreaseQuantity(index) {
-  if (cart[index].quantity > 1) {
-    cart[index].quantity--;
-  } else {
-    removeFromCart(index);
-  }
-  renderCartPage();
-}
-
-// 📦 View more button (index.html)
-const viewMoreBtn = document.getElementById("view-more");
-if (viewMoreBtn) {
-  viewMoreBtn.addEventListener("click", () => {
-    visibleCount = Math.min(visibleCount + 4, productsData.length);
-    renderProducts();
-  });
-}
-
-// 🔍 Search toggle
-document.addEventListener("DOMContentLoaded", () => {
-  const icon = document.getElementById("search-icon");
-  const container = document.getElementById("searchContainer");
-
-  if (icon && container) {
-    icon.addEventListener("click", () => {
-      container.style.display =
-        container.style.display === "none" ? "block" : "none";
-    });
-  }
-});
-
-// ✅ Initialize correct page
-document.addEventListener("DOMContentLoaded", () => {
-  if (document.getElementById("product-list")) loadProducts();
-  if (document.getElementById("product-details")) loadProductDetails();
-  if (document.getElementById("cart-items")) renderCartPage();
-  updateCartCount();
-});
-// 📦 Load products by style (products.html?style=Sneakers)
-function loadProductsByStyle() {
-  const heading = document.getElementById("products-heading");
+// ==================== 🔍 SEARCH & FILTER ==================== //
+function loadProductsByQuery() {
   const container = document.getElementById("product-list");
-  if (!heading || !container) return;
+  const heading = document.getElementById("products-heading");
+  if (!container) return;
 
   const params = new URLSearchParams(window.location.search);
   const style = params.get("style");
+  const search = params.get("search")?.toLowerCase();
 
   fetch("assets/styles/products.json")
     .then((res) => res.json())
     .then((data) => {
-      const filtered = data.products.filter((p) => {
-        if (Array.isArray(p.style)) {
-          return p.style
-            .map((s) => s.toLowerCase())
-            .includes(style.toLowerCase());
-        } else if (typeof p.style === "string") {
-          return p.style.toLowerCase() === style.toLowerCase();
-        }
-        return false;
-      });
+      let filtered = data.products;
 
-      heading.textContent = style
-        ? `${style.charAt(0).toUpperCase() + style.slice(1)}s`
-        : "All Products";
+      // 🔹 Style filter
+      if (style) {
+        filtered = filtered.filter((p) =>
+          Array.isArray(p.style)
+            ? p.style.some((s) => s.toLowerCase() === style.toLowerCase())
+            : p.style.toLowerCase() === style.toLowerCase()
+        );
+        if (heading) heading.textContent = `${style}s`;
+      }
 
+      // 🔹 Search filter
+      if (search) {
+        filtered = filtered.filter((p) => {
+          const nameMatch = p.name.toLowerCase().includes(search);
+          const styleMatch = Array.isArray(p.style)
+            ? p.style.some((s) => s.toLowerCase().includes(search))
+            : p.style.toLowerCase().includes(search);
+          const priceMatch = String(p.price).includes(search);
+          return nameMatch || styleMatch || priceMatch;
+        });
+        if (heading) heading.textContent = `Search results for "${search}"`;
+      }
+
+      // 🔹 Render products
       container.innerHTML = "";
-
       if (filtered.length === 0) {
-        container.innerHTML = `<p>No ${style}s found</p>`;
+        container.innerHTML = "<p>No products found.</p>";
         return;
       }
 
@@ -264,72 +243,63 @@ function loadProductsByStyle() {
         const formattedPrice = `₦ ${product.price.toLocaleString()}`;
         const div = document.createElement("div");
         div.classList.add("product-card");
+        div.setAttribute("data-aos", "fade-up");
 
         div.innerHTML = `
-            <img 
-        src="optimized/mobile/${product.image}.webp"
-        srcset="
-          optimized/mobile/${product.image}.webp 400w,
-          optimized/tablet/${product.image}.webp 768w,
-          optimized/desktop/${product.image}.webp 1200w
-        "
-        sizes="(max-width: 768px) 100vw, 50vw"
-        alt="${product.name}"
-        loading="lazy"
-        decoding="async"
-        width="300"
-        height="300"
-      >
+          <img
+            src="optimized/mobile/${product.image}.webp"
+            srcset="
+              optimized/mobile/${product.image}.webp 400w,
+              optimized/tablet/${product.image}.webp 768w,
+              optimized/desktop/${product.image}.webp 1200w
+            "
+            sizes="(max-width: 768px) 100vw, 50vw"
+            alt="${product.name}"
+            loading="lazy"
+            decoding="async"
+            width="300"
+            height="300"
+          >
           <h3>${product.name}</h3>
           <p>${formattedPrice}</p>
           <button class="add-to-cart-btn">Add to Cart</button>
         `;
 
-        // click → go to product details
+        // Add-to-cart button
+        div.querySelector(".add-to-cart-btn").addEventListener("click", (e) => {
+          e.stopPropagation();
+          addToCart(product);
+        });
+
+        // Navigate to product details when card is clicked
         div.addEventListener("click", (e) => {
           if (!e.target.classList.contains("add-to-cart-btn")) {
             window.location = `product.html?id=${product.id}`;
           }
         });
 
-        // add to cart
-        div.querySelector(".add-to-cart-btn").addEventListener("click", (e) => {
-          e.stopPropagation();
-          addToCart(product);
-        });
-
         container.appendChild(div);
       });
     });
 }
-const orderBtn = document.getElementById("order-btn");
-if (orderBtn) {
-  orderBtn.style.display = cart.length > 0 ? "block" : "none";
-}
 
-// 🟢 WhatsApp Order Logic
-document.addEventListener("DOMContentLoaded", () => {
+// ==================== 🟢 ORDER (WhatsApp) ==================== //
+function setupOrder() {
   const orderBtn = document.getElementById("order-btn");
   const orderForm = document.getElementById("order-form");
 
   if (orderBtn) {
-    // Step 1: show form when clicking "Place Order"
+    // Show form only if cart not empty
+    orderBtn.style.display = cart.length > 0 ? "block" : "none";
+
     orderBtn.addEventListener("click", () => {
-      if (
-        orderForm.style.display === "none" ||
-        orderForm.style.display === ""
-      ) {
-        orderForm.style.display = "block";
-      } else {
-        orderForm.style.display = "none";
-      }
-      orderBtn.style.display = "none";
+      orderForm.style.display =
+        orderForm.style.display === "block" ? "none" : "block";
     });
   }
 
   const confirmBtn = document.getElementById("confirm-order");
   if (confirmBtn) {
-    // Step 2: confirm order and redirect to WhatsApp
     confirmBtn.addEventListener("click", () => {
       const name = document.getElementById("customer-name").value.trim();
       const phone = document.getElementById("customer-phone").value.trim();
@@ -357,22 +327,85 @@ document.addEventListener("DOMContentLoaded", () => {
       message += `\n📞 Phone: ${phone}`;
       message += `\n📍 Location: ${location}`;
 
-      const retailerNumber = "2349074674756"; // your WhatsApp number
+      const retailerNumber = "2348166065517";
       const url = `https://wa.me/${retailerNumber}?text=${encodeURIComponent(
         message
       )}`;
 
-      // 🟢 Open WhatsApp
       window.open(url, "_blank");
 
-      // 🟢 Clear cart after order
+      // clear cart
       cart = [];
       localStorage.removeItem("cart");
       renderCartPage();
       updateCartCount();
 
-      // Hide the form again
       orderForm.style.display = "none";
+      if (orderBtn) orderBtn.style.display = "none";
     });
   }
+}
+
+// ==================== 🚀 INITIALIZER ==================== //
+document.addEventListener("DOMContentLoaded", () => {
+  // Init products
+  if (document.getElementById("product-list")) {
+    if (
+      window.location.search.includes("style") ||
+      window.location.search.includes("search")
+    ) {
+      loadProductsByQuery();
+    } else {
+      loadProducts();
+    }
+  }
+
+  // Init product details
+  if (document.getElementById("product-details")) loadProductDetails();
+
+  // Init cart
+  if (document.getElementById("cart-items")) renderCartPage();
+
+  // View more button
+  const viewMoreBtn = document.getElementById("view-more");
+  if (viewMoreBtn) {
+    viewMoreBtn.addEventListener("click", () => {
+      visibleCount = Math.min(visibleCount + 4, productsData.length);
+      renderProducts();
+    });
+  }
+
+  // Search toggle + redirect
+  const icon = document.getElementById("search-icon");
+  const container = document.getElementById("searchContainer");
+  const searchBtn = document.getElementById("searchBtn");
+  const searchInput = document.getElementById("searchInput");
+
+  if (icon && container) {
+    icon.addEventListener("click", () => {
+      container.style.display =
+        container.style.display === "none" ? "block" : "none";
+    });
+  }
+
+  if (searchBtn && searchInput) {
+    const doSearch = () => {
+      const query = searchInput.value.trim();
+      if (query) {
+        window.location.href = `products.html?search=${encodeURIComponent(
+          query
+        )}`;
+      }
+    };
+    searchBtn.addEventListener("click", doSearch);
+    searchInput.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") doSearch();
+    });
+  }
+
+  // Setup order form
+  setupOrder();
+
+  // Update cart count badge
+  updateCartCount();
 });

@@ -186,22 +186,24 @@ nav a:hover {
   display: grid;
   margin: 9em 2em;
   place-content: center;
+  justify-content: space-between;
   margin-top: 9em;
   color: var(--primary-color);
   background-color: var(--background-color);
-  height: 80vh;
+  height: 100;
 }
 #product-details {
   display: grid;
   place-items: center;
   width: 100%;
-  height: auto;
+  padding: 0 2em;
+  height: 90vh;
 }
 #product-details img {
   margin-top: 3em;
-  max-width: 50vw;
   width: 100%;
   height: auto;
+  flex-shrink: 0;
 }
 #product-details h2 p {
   color: var(--primary-color);
@@ -328,7 +330,7 @@ nav a:hover {
 
 #cart-items span.iconify {
   font-size: 20px;
-  color: #d9534f; /* red for delete */
+  color: #d9534f;
 }
 /* Order Form Container */
 #order-form {
@@ -338,7 +340,7 @@ nav a:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   max-width: 400px;
   margin: 15px auto;
-  display: none; /* stays hidden until shown */
+  display: none;
   flex-direction: column;
   gap: 2em;
 }
@@ -355,7 +357,7 @@ nav a:hover {
 }
 
 #order-form input:focus {
-  border-color: var(--primary-color); /* your primary theme color */
+  border-color: var(--primary-color);
   box-shadow: 0 0 6px var(--primary-color, 0.4);
 }
 
@@ -447,6 +449,14 @@ nav a:hover {
   background: transparent;
   color: var(--primary-color);
   border: 1px solid var(--primary-color);
+}
+#searchInput {
+  padding: 1em;
+  border: none;
+  border-radius: 2em;
+}
+#searchInput:focus {
+  border-color: var(--primary-color);
 }
 /* category section */
 .category {
@@ -557,8 +567,6 @@ footer h6 {
 #cart-desktop {
   display: none;
 }
-/* Call-to-action breathing animation */
-/* Call-to-action breathing animation */
 .cta-breathing {
   animation: breathing 2.5s ease-in-out infinite;
   transform-origin: center;
