@@ -254,15 +254,42 @@ function renderCartPage() {
     total += item.price * item.quantity;
     const li = document.createElement("li");
     li.innerHTML = `
-      <img src="optimized/mobile/${item.image}.webp">
-      ${item.name} - ₦${item.price.toLocaleString()} x ${item.quantity}
-      <button onclick="removeFromCart(${index})">Remove</button>
-    `;
+    <divclass="cart-img">
+  <img src="optimized/mobile/${item.image}.webp">
+   ₦${item.price.toLocaleString()} 
+   </div> <br/>
+  <span class="item-name">${item.name}</span> 
+    <div class="cart-btn">
+  <button class="qty-btn" onclick="decreaseQuantity(${index})">−</button>
+  <span class="quantity">${item.quantity}</span>
+  <button class="qty-btn" onclick="increaseQuantity(${index})">+</button>
+  <button onclick="removeFromCart(${index})">
+    <span class="iconify" data-icon="mdi:trash"></span>
+  </button>
+  </div>
+`;
+
     cartItems.appendChild(li);
   });
 
   cartTotal.textContent = total.toLocaleString();
   updateCartCount();
+}
+
+// ➕ Increase quantity
+function increaseQuantity(index) {
+  cart[index].quantity++;
+  renderCartPage();
+}
+
+// ➖ Decrease quantity
+function decreaseQuantity(index) {
+  if (cart[index].quantity > 1) {
+    cart[index].quantity--;
+  } else {
+    removeFromCart(index); // remove if it hits 0
+  }
+  renderCartPage();
 }
 
 // 📦 View more button (index.html)

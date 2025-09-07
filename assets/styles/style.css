@@ -241,7 +241,8 @@ nav a:hover {
   padding: 1rem 2rem 0 2rem;
   background: var(--background-color);
 }
-#cart-items {
+/* cart-page */
+/* #cart-items {
   display: flex;
   flex-direction: column;
   gap: 2em;
@@ -253,11 +254,7 @@ nav a:hover {
 #cart-items p li span {
   color: var(--primary-color);
 }
-.her {
-  display: grid;
-  margin-top: 6em;
-  text-align: center;
-}
+
 
 #cart-items li {
   list-style: none;
@@ -270,7 +267,71 @@ nav a:hover {
   border: none;
   border-radius: 1em;
   height: fit-content;
+} */
+.her {
+  display: grid;
+  margin-top: 6em;
+  text-align: center;
 }
+#cart-items li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+.cart-img {
+  display: flex;
+  gap: 1em;
+}
+.cart-btn {
+  display: flex;
+  gap: 2em;
+}
+#cart-items img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+#cart-items button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#cart-items button:hover {
+  opacity: 0.7;
+}
+
+/* Style for plus/minus */
+#cart-items .qty-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#cart-items .qty-btn:hover {
+  background: #eee;
+}
+
+#cart-items span.iconify {
+  font-size: 20px;
+  color: #d9534f; /* red for delete */
+}
+
+/* end of cart page, product cont... */
 .product-card {
   width: 100%;
   height: auto;
@@ -447,10 +508,14 @@ footer h6 {
   footer h6 {
     font-size: large;
   }
-  #cart-items {
+  #cart-items li img {
+    width: 8em;
+  }
+  #cart-items li {
     display: flex;
     flex-direction: column;
   }
+
   .hamburger {
     display: flex;
   }
