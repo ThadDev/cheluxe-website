@@ -331,22 +331,149 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// ==================== 🟢 ORDER (WhatsApp) ==================== //
+// // ==================== 🟢 ORDER (WhatsApp) ==================== //
+// function setupOrder() {
+//   const orderBtn = document.getElementById("order-btn");
+//   const orderForm = document.getElementById("order-form");
+
+//   if (orderBtn) {
+//     // Show form only if cart not empty
+//     orderBtn.style.display = cart.length > 0 ? "block" : "none";
+
+//     orderBtn.addEventListener("click", () => {
+//       orderForm.style.display =
+//         orderForm.style.display === "block" ? "none" : "block";
+//     });
+//   }
+
+//   const confirmBtn = document.getElementById("confirm-order");
+//   if (confirmBtn) {
+//     confirmBtn.addEventListener("click", () => {
+//       const name = document.getElementById("customer-name").value.trim();
+//       const phone = document.getElementById("customer-phone").value.trim();
+//       const location = document
+//         .getElementById("customer-location")
+//         .value.trim();
+
+//       if (!name || !phone || !location) {
+//         alert("Please fill in your name, phone number, and location.");
+//         return;
+//       }
+
+//       let message = `🛒 New Order\n\n`;
+//       cart.forEach((item) => {
+//         message += `${item.name} x${item.quantity} - ₦${(
+//           item.price * item.quantity
+//         ).toLocaleString()}\n`;
+//       });
+
+//       message += `\nTotal: ₦${cart
+//         .reduce((sum, item) => sum + item.price * item.quantity, 0)
+//         .toLocaleString()}`;
+
+//       message += `\n\n👤 Name: ${name}`;
+//       message += `\n📞 Phone: ${phone}`;
+//       message += `\n📍 Location: ${location}`;
+
+//       const retailerNumber = "2348166065517";
+//       const url = `https://wa.me/${retailerNumber}?text=${encodeURIComponent(
+//         message
+//       )}`;
+
+// //       window.open(url, "_blank");
+
+// //       // clear cart
+// //       cart = [];
+// //       localStorage.removeItem("cart");
+// //       renderCartPage();
+// //       updateCartCount();
+
+// //       orderForm.style.display = "none";
+// //       if (orderBtn) orderBtn.style.display = "none";
+// //     });
+// //   }
+// // }
+// function setupOrder() {
+//   const orderBtn = document.getElementById("order-btn");
+//   const orderForm = document.getElementById("order-form");
+
+//   if (orderBtn && orderForm) {
+//     // Show form only if cart not empty
+//     orderBtn.style.display = cart.length > 0 ? "block" : "none";
+
+//     orderBtn.addEventListener("click", () => {
+//       orderForm.style.display =
+//         orderForm.style.display === "block" ? "none" : "block";
+//     });
+//   }
+
+//   const confirmBtn = document.getElementById("confirm-order");
+//   if (confirmBtn && orderForm && orderBtn) {
+//     confirmBtn.addEventListener("click", () => {
+//       const name = document.getElementById("customer-name").value.trim();
+//       const phone = document.getElementById("customer-phone").value.trim();
+//       const location = document
+//         .getElementById("customer-location")
+//         .value.trim();
+
+//       if (!name || !phone || !location) {
+//         alert("Please fill in your name, phone number, and location.");
+//         return;
+//       }
+
+//       let message = `🛒 New Order\n\n`;
+//       cart.forEach((item) => {
+//         message += `${item.name} x${item.quantity} - ₦${(
+//           item.price * item.quantity
+//         ).toLocaleString()}\n`;
+//       });
+
+//       message += `\nTotal: ₦${cart
+//         .reduce((sum, item) => sum + item.price * item.quantity, 0)
+//         .toLocaleString()}`;
+
+//       message += `\n\n👤 Name: ${name}`;
+//       message += `\n📞 Phone: ${phone}`;
+//       message += `\n📍 Location: ${location}`;
+
+//       const retailerNumber = "2348166065517";
+//       const url = `https://wa.me/${retailerNumber}?text=${encodeURIComponent(
+//         message
+//       )}`;
+
+//       window.open(url, "_blank");
+
+//       // clear cart
+//       cart = [];
+//       localStorage.removeItem("cart");
+//       renderCartPage();
+//       updateCartCount();
+
+//       orderForm.style.display = "none";
+//       orderBtn.style.display = "none";
+//     });
+//   }
+// }
 function setupOrder() {
   const orderBtn = document.getElementById("order-btn");
   const orderForm = document.getElementById("order-form");
-
-  if (orderBtn) {
-    // Show form only if cart not empty
-    orderBtn.style.display = cart.length > 0 ? "block" : "none";
-
-    orderBtn.addEventListener("click", () => {
-      orderForm.style.display =
-        orderForm.style.display === "block" ? "none" : "block";
-    });
-  }
-
   const confirmBtn = document.getElementById("confirm-order");
+
+  if (!orderBtn || !orderForm) return; // stop if missing
+
+  // 🔹 Show button only if cart not empty
+  orderBtn.style.display = cart.length > 0 ? "block" : "none";
+
+  // 🔹 Toggle form when "Place Order" is clicked
+  orderBtn.addEventListener("click", () => {
+    if (orderForm.style.display === "block") {
+      orderForm.style.display = "none";
+    } else {
+      orderForm.style.display = "block";
+    }
+  });
+
+  // 🔹 Handle confirm order
   if (confirmBtn) {
     confirmBtn.addEventListener("click", () => {
       const name = document.getElementById("customer-name").value.trim();
@@ -360,6 +487,7 @@ function setupOrder() {
         return;
       }
 
+      // 📝 Create WhatsApp message
       let message = `🛒 New Order\n\n`;
       cart.forEach((item) => {
         message += `${item.name} x${item.quantity} - ₦${(
@@ -382,14 +510,14 @@ function setupOrder() {
 
       window.open(url, "_blank");
 
-      // clear cart
+      // 🧹 Clear cart + UI
       cart = [];
       localStorage.removeItem("cart");
       renderCartPage();
       updateCartCount();
 
       orderForm.style.display = "none";
-      if (orderBtn) orderBtn.style.display = "none";
+      orderBtn.style.display = "none";
     });
   }
 }
@@ -423,18 +551,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Search toggle + redirect
-  // const icon = document.getElementById("search-icon");
-  // const container = document.getElementById("searchContainer");
-  // const searchBtn = document.getElementById("searchBtn");
-  // const searchInput = document.getElementById("searchInput");
+  //Search toggle + redirect
+  const icon = document.getElementById("search-icon");
+  const container = document.getElementById("searchContainer");
+  const searchBtn = document.getElementById("searchBtn");
+  const searchInput = document.getElementById("searchInput");
 
-  // if (icon && container) {
-  //   icon.addEventListener("click", () => {
-  //     container.style.display =
-  //       container.style.display === "none" ? "block" : "none";
-  //   });
-  // }
+  if (icon && container) {
+    icon.addEventListener("click", () => {
+      container.style.display =
+        container.style.display === "none" ? "block" : "none";
+    });
+  }
 
   if (searchBtn && searchInput) {
     const doSearch = () => {
