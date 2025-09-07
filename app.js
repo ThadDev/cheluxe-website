@@ -282,6 +282,16 @@ function loadProductsByQuery() {
       });
     });
 }
+// 🔍 Search icon click → always go to index.html#search
+document.addEventListener("DOMContentLoaded", () => {
+  const icon = document.getElementById("search-icon");
+
+  if (icon) {
+    icon.addEventListener("click", () => {
+      window.location.href = "index.html#inv";
+    });
+  }
+});
 
 // ==================== 🟢 ORDER (WhatsApp) ==================== //
 function setupOrder() {
