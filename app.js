@@ -282,15 +282,53 @@ function loadProductsByQuery() {
       });
     });
 }
-// 🔍 Search icon click → always go to index.html#search
+// 🔍 Search icon → go to #search (smooth scroll + focus)
 document.addEventListener("DOMContentLoaded", () => {
   const icon = document.getElementById("search-icon");
 
+  function openSearch() {
+    const section = document.getElementById("inv");
+    const container = document.getElementById("searchContainer");
+    const input = document.getElementById("searchInput");
+
+    if (container) {
+      container.style.display = "block";
+    }
+
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+
+    setTimeout(() => {
+      if (input) input.focus();
+    }, 300);
+  }
+
   if (icon) {
-    icon.addEventListener("click", () => {
-      window.location.href = "index.html#inv";
+    icon.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      const onHome =
+        window.location.pathname.endsWith("index.html") ||
+        window.location.pathname === "/" ||
+        window.location.pathname.endsWith("/cheluxe-website/"); // adjust for GitHub Pages folder
+
+      if (onHome) {
+        openSearch();
+      } else {
+        window.location.href = "index.html#inv";
+      }
     });
   }
+  if (window.location.hash === "#inv") {
+    openSearch();
+  }
+
+  window.addEventListener("hashchange", () => {
+    if (window.location.hash === "#inv") {
+      openSearch();
+    }
+  });
 });
 
 // ==================== 🟢 ORDER (WhatsApp) ==================== //
@@ -386,17 +424,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Search toggle + redirect
-  const icon = document.getElementById("search-icon");
-  const container = document.getElementById("searchContainer");
-  const searchBtn = document.getElementById("searchBtn");
-  const searchInput = document.getElementById("searchInput");
+  // const icon = document.getElementById("search-icon");
+  // const container = document.getElementById("searchContainer");
+  // const searchBtn = document.getElementById("searchBtn");
+  // const searchInput = document.getElementById("searchInput");
 
-  if (icon && container) {
-    icon.addEventListener("click", () => {
-      container.style.display =
-        container.style.display === "none" ? "block" : "none";
-    });
-  }
+  // if (icon && container) {
+  //   icon.addEventListener("click", () => {
+  //     container.style.display =
+  //       container.style.display === "none" ? "block" : "none";
+  //   });
+  // }
 
   if (searchBtn && searchInput) {
     const doSearch = () => {

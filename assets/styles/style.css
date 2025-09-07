@@ -243,33 +243,7 @@ nav a:hover {
   padding: 1rem 2rem 0 2rem;
   background: var(--background-color);
 }
-/* cart-page */
-/* #cart-items {
-  display: flex;
-  flex-direction: column;
-  gap: 2em;
-}
-#cart-items li img {
-  width: 15em;
-  height: auto;
-}
-#cart-items p li span {
-  color: var(--primary-color);
-}
 
-
-#cart-items li {
-  list-style: none;
-  display: flex;
-  gap: 2em;
-}
-#cart-items li button {
-  padding: 1em 2em;
-  background-color: var(--primary-color);
-  border: none;
-  border-radius: 1em;
-  height: fit-content;
-} */
 .her {
   display: grid;
   margin-top: 6em;
@@ -726,6 +700,7 @@ footer h6 {
   .hero {
     position: relative;
     height: 88vh;
+    height: -webkit-fill-available;
     border-bottom: 1px solid var(--nav-link);
     background: none;
     background-color: var(--secondary-color);
