@@ -53,7 +53,11 @@ function renderProducts() {
   const container = document.getElementById("product-list");
   if (!container) return;
 
-  productsData.slice(visibleCount - 8, visibleCount).forEach((product) => {
+  // clear container before re-rendering
+  container.innerHTML = "";
+
+  // show products from 0 up to visibleCount
+  productsData.slice(0, visibleCount).forEach((product) => {
     const formattedPrice = `₦ ${product.price.toLocaleString()}`;
     const item = document.createElement("div");
     item.setAttribute("data-aos", "fade-up");
@@ -112,6 +116,12 @@ function loadProducts() {
     })
     .catch((err) => console.error("Error fetching products:", err));
 }
+
+// view more button logic
+document.getElementById("view-more")?.addEventListener("click", () => {
+  visibleCount += 4;
+  renderProducts();
+});
 
 // ==================== 📦 PRODUCT DETAILS ==================== //
 function loadProductDetails() {
