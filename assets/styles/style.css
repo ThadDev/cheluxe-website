@@ -545,7 +545,9 @@ footer h6 {
   animation: breathing 2.5s ease-in-out infinite;
   transform-origin: center;
 }
-
+#searchContainer{
+  display: none;
+}
 @keyframes breathing {
   0% {
     transform: scale(1);
