@@ -360,6 +360,7 @@ function setupOrder() {
     orderBtn.addEventListener("click", () => {
       orderForm.style.display =
         orderForm.style.display === "block" ? "none" : "block";
+      orderBtn.style.display = "none";
     });
   }
 

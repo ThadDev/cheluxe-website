@@ -521,6 +521,9 @@ nav a:hover {
 .footer-links a {
   color: #d4af37;
 }
+#order-btn {
+  margin-left: 8em;
+}
 .last {
   display: flex;
   width: 100vw;
