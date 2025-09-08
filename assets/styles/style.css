@@ -529,7 +529,6 @@ nav a:hover {
   padding: 2em;
 }
 .footer-links a:hover {
-  font-size: larger;
   color: var(--secondary-color);
 }
 footer h6 {
@@ -545,7 +544,7 @@ footer h6 {
   animation: breathing 2.5s ease-in-out infinite;
   transform-origin: center;
 }
-#searchContainer{
+#searchContainer {
   display: none;
 }
 @keyframes breathing {

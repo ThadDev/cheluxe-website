@@ -222,11 +222,18 @@ function loadProductsByQuery() {
       // 🔹 Search filter
       if (search) {
         filtered = filtered.filter((p) => {
-          const nameMatch = p.name.toLowerCase().includes(search);
+          const normalize = (str) => str.toLowerCase();
+
+          const nameMatch = normalize(p.name).includes(search);
           const styleMatch = Array.isArray(p.style)
-            ? p.style.some((s) => s.toLowerCase().includes(search))
-            : p.style.toLowerCase().includes(search);
+            ? p.style.some(
+                (s) =>
+                  normalize(s).includes(search) || search.includes(normalize(s))
+              )
+            : normalize(p.style).includes(search) ||
+              search.includes(normalize(p.style));
           const priceMatch = String(p.price).includes(search);
+
           return nameMatch || styleMatch || priceMatch;
         });
         if (heading) heading.textContent = `Search results for "${search}"`;
