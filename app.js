@@ -81,7 +81,7 @@ function renderProducts() {
       <h3>${product.name}</h3>
       <p class="price">${formattedPrice}</p>
       <p class="rating">⭐ ${product.rating}</p>
-      <button class="add-to-cart-btn">Add to Cart</button>
+      <button class="add-to-cart-btn">Add to cart</button>
     `;
 
     // click on card → go to product.html

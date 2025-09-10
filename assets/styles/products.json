@@ -20,7 +20,7 @@
       "id": 3,
       "name": "Mini pleat skirt",
       "image": "pic15",
-      "price": 8000,
+      "price": 7000,
       "rating": 4.0,
       "style": "skirt"
     },
@@ -36,7 +36,7 @@
       "id": 5,
       "name": "Tennis skirt",
       "image": "pic13",
-      "price": 9000,
+      "price": 7000,
       "rating": 4.6,
       "style": "skirt"
     },
@@ -44,7 +44,7 @@
       "id": 6,
       "name": "Cottage skirt",
       "image": "pic12",
-      "price": 9000,
+      "price": 8000,
       "rating": 4.8,
       "style": "skirt"
     },
@@ -60,7 +60,7 @@
       "id": 8,
       "name": "Ankara gown",
       "image": "pic10",
-      "price": 12000,
+      "price": 10000,
       "rating": 4.9,
       "style": ["ankara wear", "gown"]
     },
@@ -74,9 +74,9 @@
     },
     {
       "id": 10,
-      "name": "Ankara gown",
+      "name": "Snatched Waist",
       "image": "pic8",
-      "price": 9000,
+      "price": 9500,
       "rating": 4.4,
       "style": ["ankara wear", "gown"]
     },
@@ -92,7 +92,7 @@
       "id": 12,
       "name": "Ankara piece",
       "image": "pic6",
-      "price": 9500,
+      "price": 10000,
       "rating": 4.3,
       "style": ["ankara wear", "gown"]
     },
@@ -124,7 +124,7 @@
       "id": 16,
       "name": "Shalom piece",
       "image": "pic20",
-      "price": 11000,
+      "price": 12000,
       "rating": 4.4,
       "style": ["gown", "ankara"]
     },
@@ -138,9 +138,9 @@
     },
     {
       "id": 18,
-      "name": "Ankara piece",
+      "name": "Sundress",
       "image": "pic4",
-      "price": 9000,
+      "price": 10000,
       "rating": 4.6,
       "style": ["gown", "ankara"]
     },
@@ -148,23 +148,15 @@
       "id": 19,
       "name": "Onx veil ",
       "image": "pic3",
-      "price": 9000,
+      "price": 11000,
       "rating": 4.5,
-      "style": "gown"
-    },
-    {
-      "id": 20,
-      "name": "Onx veil ",
-      "image": "pic2",
-      "price": 9000,
-      "rating": 4.8,
       "style": "gown"
     },
     {
       "id": 21,
       "name": "Red veil",
       "image": "pic1",
-      "price": 10000,
+      "price": 11000,
       "rating": 4.3,
       "style": "gown"
     },
@@ -180,7 +172,7 @@
       "id": 23,
       "name": "Ankara piece",
       "image": "pic23",
-      "price": 17000,
+      "price": 10000,
       "rating": 4.4,
       "style": "ankara wear"
     },
@@ -188,17 +180,9 @@
       "id": 24,
       "name": "Beba piece",
       "image": "pic24",
-      "price": 9000,
+      "price": 9500,
       "rating": 4.7,
       "style": "ankara wear"
-    },
-    {
-      "id": 25,
-      "name": "Nova top",
-      "image": "pic25",
-      "price": 4000,
-      "rating": 5.0,
-      "style": "top"
     }
   ]
 }

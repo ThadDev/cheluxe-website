@@ -468,6 +468,17 @@ nav a:hover {
   justify-content: space-around;
   margin-top: 0;
 }
+/* services section */
+.services {
+  text-align: justify;
+  color: #2d2d2d;
+  padding: 2em;
+  border-bottom: 1px solid var(--secondary-color);
+}
+.services h1 {
+  text-align: center;
+  color: var(--primary-color);
+}
 .footer {
   display: flex;
   padding: 3em 0 0 0;
@@ -703,7 +714,7 @@ footer h6 {
   }
   .hero {
     position: relative;
-    height: 88vh;
+    height: 82vh;
     height: -webkit-fill-available;
     border-bottom: 1px solid var(--nav-link);
     background: none;
