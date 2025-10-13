@@ -140,7 +140,7 @@
       "id": 18,
       "name": "Sundress",
       "image": "pic4",
-      "price": 10000,
+      "price": 13000,
       "rating": 4.6,
       "style": ["gown", "ankara"]
     },
@@ -148,7 +148,7 @@
       "id": 19,
       "name": "Onx veil ",
       "image": "pic3",
-      "price": 11000,
+      "price": 15000,
       "rating": 4.5,
       "style": "gown"
     },
@@ -156,7 +156,7 @@
       "id": 21,
       "name": "Red veil",
       "image": "pic1",
-      "price": 11000,
+      "price": 12000,
       "rating": 4.3,
       "style": "gown"
     },
@@ -184,14 +184,6 @@
       "rating": 4.7,
       "style": "ankara wear"
     },
-  {
-    "id": 26,
-    "name": "Zara delight",
-    "image": "pic25",
-    "price": 10500,
-    "rating": 4.6,
-    "style": "ankara wear"
-  },
   {
     "id": 27,
     "name": "Kente bloom",
@@ -244,7 +236,7 @@
     "id": 33,
     "name": "Plain corset top and pleat skirt",
     "image": "pic32",
-    "price": 8000,
+    "price": 11000,
     "rating": 4.4,
     "style": ["top","skirt"]
   },
@@ -252,7 +244,7 @@
     "id": 34,
     "name": "Claire gown",
     "image": "pic33",
-    "price": 10700,
+    "price": 14000,
     "rating": 4.8,
     "style": "gown"
   },
@@ -284,7 +276,7 @@
     "id": 38,
     "name": "flare",
     "image": "pic37",
-    "price": 15000,
+    "price": 16000,
     "rating": 4.9,
     "style": "gown"
   },
