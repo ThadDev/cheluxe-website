@@ -183,6 +183,166 @@
       "price": 9500,
       "rating": 4.7,
       "style": "ankara wear"
-    }
-  ]
+    },
+  {
+    "id": 26,
+    "name": "Zara delight",
+    "image": "pic25",
+    "price": 10500,
+    "rating": 4.6,
+    "style": "ankara wear"
+  },
+  {
+    "id": 27,
+    "name": "Kente bloom",
+    "image": "pic26",
+    "price": 8000,
+    "rating": 4.8,
+    "style": "gown"
+  },
+  {
+    "id": 28,
+    "name": "Lush threads",
+    "image": "pic27",
+    "price": 10000,
+    "rating": 4.9,
+    "style": "gown"
+  },
+  {
+    "id": 29,
+    "name": "Vintage shirt",
+    "image": "pic28",
+    "price": 10000,
+    "rating": 4.5,
+    "style": "top"
+  },
+  {
+    "id": 30,
+    "name": "Claire gown",
+    "image": "pic29",
+    "price": 13000,
+    "rating": 4.6,
+    "style": "gown"
+  },
+  {
+    "id": 31,
+    "name": "Diva",
+    "image": "pic30",
+    "price": 9000,
+    "rating": 4.7,
+    "style": "gown"
+  },
+  {
+    "id": 32,
+    "name": "Royal stitch",
+    "image": "pic31",
+    "price": 10000,
+    "rating": 4.9,
+    "style": "gown"
+  },
+  {
+    "id": 33,
+    "name": "Plain corset top and pleat skirt",
+    "image": "pic32",
+    "price": 8000,
+    "rating": 4.4,
+    "style": ["top","skirt"]
+  },
+  {
+    "id": 34,
+    "name": "Claire gown",
+    "image": "pic33",
+    "price": 10700,
+    "rating": 4.8,
+    "style": "gown"
+  },
+  {
+    "id": 35,
+    "name": "corset top and carribean skirt",
+    "image": "pic34",
+    "price": 13000,
+    "rating": 4.6,
+    "style": ["top","skirt"]
+  },
+  {
+    "id": 36,
+    "name": "Bow scrunchie",
+    "image": "pic35",
+    "price": 1500,
+    "rating": 4.5,
+    "style": "assessories"
+  },
+  {
+    "id": 37,
+    "name": "Ankara piece",
+    "image": "pic36",
+    "price": 10800,
+    "rating": 4.7,
+    "style": "top skirt"
+  },
+  {
+    "id": 38,
+    "name": "flare",
+    "image": "pic37",
+    "price": 15000,
+    "rating": 4.9,
+    "style": "gown"
+  },
+  {
+    "id": 39,
+    "name": "Elegant gown",
+    "image": "pic38",
+    "price": 18000,
+    "rating": 4.5,
+    "style": "gown"
+  },
+  {
+    "id": 40,
+    "name": "Trendy gown",
+    "image": "pic39",
+    "price": 11000,
+    "rating": 4.8,
+    "style": "gown"
+  },
+  {
+    "id": 41,
+    "name": "Lace palazzo pant",
+    "image": "pic40",
+    "price": 7000,
+    "rating": 5.0,
+    "style": "pant"
+  },
+  {
+    "id": 42,
+    "name": "Black veil",
+    "image": "pic41",
+    "price": 9700,
+    "rating": 4.7,
+    "style": "ankara wear"
+  },
+  {
+    "id": 43,
+    "name": "Elegant print",
+    "image": "pic42",
+    "price": 10100,
+    "rating": 4.8,
+    "style": "ankara wear"
+  },
+  {
+    "id": 44,
+    "name": "Luxe gown",
+    "image": "pic43",
+    "price": 15000,
+    "rating": 4.5,
+    "style": "gown"
+  },
+  {
+    "id": 45,
+    "name": "Red veil",
+    "image": "pic44",
+    "price": 10000,
+    "rating": 4.9,
+    "style": "gown"
+  }
+]
 }
