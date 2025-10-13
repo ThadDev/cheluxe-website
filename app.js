@@ -146,7 +146,7 @@ function loadProductDetails() {
           src="optimized/mobile/${product.image}.webp"
           srcset="
             optimized/mobile/${product.image}.webp 400w,
-            optimized/tablet/${product.image}.webp 768w,
+         
             optimized/desktop/${product.image}.webp 1200w
           "
           sizes="(max-width: 768px) 100vw, 50vw"
@@ -278,6 +278,7 @@ function loadProductsByQuery() {
             height="300"
           >
           <h3>${product.name}</h3>
+          <p class="product-rating">${product.rating}</p>
           <p>${formattedPrice}</p>
           <button class="add-to-cart-btn">Add to Cart</button>
         `;
