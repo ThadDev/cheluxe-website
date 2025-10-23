@@ -60,7 +60,7 @@
       "id": 8,
       "name": "Ankara gown",
       "image": "pic10",
-      "price": 10000,
+      "price": 11000,
       "rating": 4.9,
       "style": ["ankara wear", "gown"]
     },
@@ -108,7 +108,7 @@
       "id": 14,
       "name": "Heart shaped gown",
       "image": "pic18",
-      "price": 14000,
+      "price": 12000,
       "rating": 4.6,
       "style": "gown"
     },
@@ -172,7 +172,7 @@
       "id": 23,
       "name": "Ankara piece",
       "image": "pic23",
-      "price": 10000,
+      "price": 12000,
       "rating": 4.4,
       "style": "ankara wear"
     },
@@ -276,7 +276,7 @@
     "id": 38,
     "name": "flare",
     "image": "pic37",
-    "price": 16000,
+    "price": 18000,
     "rating": 4.9,
     "style": "gown"
   },
@@ -300,7 +300,7 @@
     "id": 41,
     "name": "Lace palazzo pant",
     "image": "pic40",
-    "price": 7000,
+    "price": 8000,
     "rating": 5.0,
     "style": "pant"
   },
@@ -412,7 +412,7 @@
     "id": 55,
     "name": "3 piece set",
     "image": "pic54",
-    "price": 12000,
+    "price": 13000,
     "rating": 4.6,
     "style": "2-piece"
   },
@@ -436,7 +436,7 @@
     "id": 58,
     "name": "Jumbo pants",
     "image": "pic57",
-    "price": 7000,
+    "price": 6000,
     "rating": 4.8,
     "style": "pant"
   },
@@ -482,11 +482,11 @@
   },
   {
     "id": 64,
-    "name": "Adire Classic",
+    "name": "Classic skirt",
     "image": "pic63",
     "price": 8000,
     "rating": 4.4,
-    "style": "2-piece"
+    "style": "skirt"
   },
   {
     "id": 65,
@@ -522,35 +522,35 @@
   },
    {
     "id": 69,
-    "name": "2-piece yellow skirt",
+    "name": "Lace up skirt",
     "image": "pic69",
     "price":10500,
     "rating": 4.6,
-    "style": "2-piece"
+    "style": "skirt"
   },
   {
     "id": 70,
-    "name": "2-piece; plain skirt",
+    "name": " black plain skirt",
     "image": "pic70",
     "price": 8500,
     "rating": 4.5,
-    "style": "assessories"
+    "style": "skirt"
   },
   {
     "id": 71,
-    "name": "white patterned top and plain skirt",
+    "name": "patterned plain skirt",
     "image": "pic71",
     "price": 8500,
     "rating": 4.7,
-    "style": "2-piece"
+    "style": "skirt"
   },
   {
     "id": 72,
-    "name": "2-piece patterned skirt",
+    "name": "striped skirt",
     "image": "pic72",
     "price": 10000,
     "rating": 4.9,
-    "style": "2-piece"
+    "style": "skirt"
   },
   {
     "id": 73,
@@ -562,7 +562,7 @@
   },
   {
     "id": 74,
-    "name": "Pink maya gown",
+    "name": "Maya gown",
     "image": "pic77",
     "price": 9000,
     "rating": 4.8,
