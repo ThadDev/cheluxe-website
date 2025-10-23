@@ -55,6 +55,18 @@
             <div class="hero-image">
               <img src="https://res.cloudinary.com/dctgcp7sv/image/upload/v1757055275/Adobe_Express_-_file-cropped_zwfgqk.webp" alt="">
             </div>
+             <div class="hero-slider">
+    <div class="slider-track">
+      <img src="./optimized/mobile/pic30.webp" alt="diva">
+      <img src="./optimized/mobile/pic32.webp" alt="">
+      <img src="./optimized/mobile/pic29.webp" alt="">
+      <img src="./optimized/mobile/pic45.webp" alt="">
+      <img src="./optimized/mobile/pic35.webp" alt="">
+      <img src="./optimized/mobile/pic19.webp" alt="">
+      <img src="./optimized/mobile/pic68.webp" alt="">
+      <img src="./optimized/mobile/pic76.webp" alt="">
+    </div>
+  </div>
             <div id="inv"></div>
             <div id="invv"></div>
             
@@ -178,6 +190,17 @@
   });
 });
 
+  document.addEventListener("DOMContentLoaded", () => {
+    const sliderTrack = document.querySelector(".slider-track");
+    const slides = document.querySelectorAll(".slider-track img");
+    let index = 0;
+
+    setInterval(() => {
+      index++;
+      if (index >= slides.length) index = 0;
+      sliderTrack.style.transform = `translateX(-${index * 100}%)`;
+    }, 3000);
+  });
     </script>
   </body>
 </html>
