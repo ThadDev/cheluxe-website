@@ -14,20 +14,20 @@
       "image": "pic16",
       "price": 12000,
       "rating": 4.3,
-      "style": ["top", "skirt"]
+      "style": "2-piece"
     },
     {
       "id": 3,
       "name": "Mini pleat skirt",
       "image": "pic15",
       "price": 7000,
-      "rating": 4.0,
+      "rating": 4.9,
       "style": "skirt"
     },
     {
       "id": 4,
-      "name": "Ballon skirk",
-      "image": "pic14",
+      "name": "Ballon skirt",
+      "image": "pic74",
       "price": 7000,
       "rating": 4.7,
       "style": "skirt"
@@ -43,7 +43,7 @@
     {
       "id": 6,
       "name": "Cottage skirt",
-      "image": "pic12",
+      "image": "pic73",
       "price": 8000,
       "rating": 4.8,
       "style": "skirt"
@@ -70,7 +70,7 @@
       "image": "pic9",
       "price": 9000,
       "rating": 4.1,
-      "style": ["top", "skirk"]
+      "style": "2-piece"
     },
     {
       "id": 10,
@@ -78,7 +78,7 @@
       "image": "pic8",
       "price": 9500,
       "rating": 4.4,
-      "style": ["ankara wear", "gown"]
+      "style":  "gown"
     },
     {
       "id": 11,
@@ -108,7 +108,7 @@
       "id": 14,
       "name": "Heart shaped gown",
       "image": "pic18",
-      "price": 9000,
+      "price": 14000,
       "rating": 4.6,
       "style": "gown"
     },
@@ -126,7 +126,7 @@
       "image": "pic20",
       "price": 12000,
       "rating": 4.4,
-      "style": ["gown", "ankara"]
+      "style":"2-piece"
     },
     {
       "id": 17,
@@ -228,9 +228,9 @@
     "id": 32,
     "name": "Royal stitch",
     "image": "pic31",
-    "price": 10000,
+    "price": 12000,
     "rating": 4.9,
-    "style": "gown"
+    "style": "2-piece"
   },
   {
     "id": 33,
@@ -238,7 +238,7 @@
     "image": "pic32",
     "price": 11000,
     "rating": 4.4,
-    "style": ["top","skirt"]
+    "style": "2-piece"
   },
   {
     "id": 34,
@@ -254,7 +254,7 @@
     "image": "pic34",
     "price": 13000,
     "rating": 4.6,
-    "style": ["top","skirt"]
+    "style": "2-piece"
   },
   {
     "id": 36,
@@ -310,7 +310,7 @@
     "image": "pic41",
     "price": 9700,
     "rating": 4.7,
-    "style": "ankara wear"
+    "style": "gown"
   },
   {
     "id": 43,
@@ -330,11 +330,244 @@
   },
   {
     "id": 45,
-    "name": "Red veil",
-    "image": "pic44",
+    "name": "Royal veil",
+    "image": "pic68",
+    "price": 19000,
+    "rating": 5.9,
+    "style": "2-piece"
+  },
+  {
+    "id": 46,
+    "name": "Pattern skirt",
+    "image": "pic45",
+    "price": 5000,
+    "rating": 5.9,
+    "style": "skirt"
+  },
+  {
+    "id": 47,
+    "name": "Smokey skirt",
+    "image": "pic46",
+    "price": 6000,
+    "rating": 4.8,
+    "style": "skirt"
+  },
+  {
+    "id": 48,
+    "name": "Roselle top",
+    "image": "pic47",
+    "price": 5000,
+    "rating": 4.3,
+    "style": "top"
+  },
+  {
+    "id": 49,
+    "name": "Sky-blue roselle top",
+    "image": "pic48",
+    "price": 5000,
+    "rating": 4.9,
+    "style": "top"
+  },
+  {
+    "id": 50,
+    "name": "Tube smokey top",
+    "image": "pic49",
+    "price": 5000,
+    "rating": 4.5,
+    "style": "top"
+  },
+  {
+    "id": 51,
+    "name": "yellow smokey top",
+    "image": "pic50",
+    "price": 4000,
+    "rating": 4.2,
+    "style": "top"
+  },
+  {
+    "id": 52,
+    "name": "roselle gown",
+    "image": "pic51",
+    "price": 16000,
+    "rating": 4.4,
+    "style": "gown"
+  },
+  {
+    "id": 53,
+    "name": "Milk maid top",
+    "image": "pic52",
+    "price": 7000,
+    "rating": 4.7,
+    "style": "top"
+  },
+  {
+    "id": 54,
+    "name": "Camilla top",
+    "image": "pic53",
+    "price": 5000,
+    "rating": 4.3,
+    "style": "top"
+  },
+  {
+    "id": 55,
+    "name": "3 piece set",
+    "image": "pic54",
+    "price": 12000,
+    "rating": 4.6,
+    "style": "2-piece"
+  },
+  {
+    "id": 56,
+    "name": "Denim gown",
+    "image": "pic55",
+    "price": 12000,
+    "rating": 4.5,
+    "style": "gown"
+  },
+  {
+    "id": 57,
+    "name": "2-piece set",
+    "image": "pic56",
+    "price": 11000,
+    "rating": 4.4,
+    "style": "2-piece"
+  },
+  {
+    "id": 58,
+    "name": "Jumbo pants",
+    "image": "pic57",
+    "price": 7000,
+    "rating": 4.8,
+    "style": "pant"
+  },
+  {
+    "id": 59,
+    "name": "Camilla Set",
+    "image": "pic58",
+    "price": 20000,
+    "rating": 4.5,
+    "style": "2-piece"
+  },
+  {
+    "id": 60,
+    "name": "2-piece set",
+    "image": "pic59",
+    "price": 13000,
+    "rating": 4.4,
+    "style": "2-piece"
+  },
+  {
+    "id": 61,
+    "name": "Aurellia gown",
+    "image": "pic60",
+    "price": 15000,
+    "rating": 4.6,
+    "style": "gown"
+  },
+  {
+    "id": 62,
+    "name": "Seraphina",
+    "image": "pic61",
+    "price": 11000,
+    "rating": 4.3,
+    "style": "gown"
+  },
+  {
+    "id": 63,
+    "name": "vera veil",
+    "image": "pic62",
+    "price": 10000,
+    "rating": 4.2,
+    "style": "gown"
+  },
+  {
+    "id": 64,
+    "name": "Adire Classic",
+    "image": "pic63",
+    "price": 8000,
+    "rating": 4.4,
+    "style": "2-piece"
+  },
+  {
+    "id": 65,
+    "name": "Palazzo trouser",
+    "image": "pic64",
+    "price": 8000,
+    "rating": 5.9,
+    "style": "pant"
+  },
+  {
+    "id": 66,
+    "name": "2-piece elegant set",
+    "image": "pic65",
+    "price": 11000,
+    "rating": 4.9,
+    "style": "2-piece"
+  },
+  {
+    "id": 67,
+    "name": " Camilla Luxe gown",
+    "image": "pic66",
+    "price": 16000,
+    "rating": 4.2,
+    "style": "gown"
+  },
+  {
+    "id": 68,
+    "name": "Long cord gown",
+    "image": "pic67",
+    "price": 18000,
+    "rating": 4.8,
+    "style": "gown"
+  },
+   {
+    "id": 69,
+    "name": "2-piece yellow skirt",
+    "image": "pic69",
+    "price":10500,
+    "rating": 4.6,
+    "style": "2-piece"
+  },
+  {
+    "id": 70,
+    "name": "2-piece; plain skirt",
+    "image": "pic70",
+    "price": 8500,
+    "rating": 4.5,
+    "style": "assessories"
+  },
+  {
+    "id": 71,
+    "name": "white patterned top and plain skirt",
+    "image": "pic71",
+    "price": 8500,
+    "rating": 4.7,
+    "style": "2-piece"
+  },
+  {
+    "id": 72,
+    "name": "2-piece patterned skirt",
+    "image": "pic72",
     "price": 10000,
     "rating": 4.9,
+    "style": "2-piece"
+  },
+  {
+    "id": 73,
+    "name": "Elegant backless gown",
+    "image": "pic76",
+    "price": 8500,
+    "rating": 4.5,
+    "style": "gown"
+  },
+  {
+    "id": 74,
+    "name": "Pink maya gown",
+    "image": "pic77",
+    "price": 9000,
+    "rating": 4.8,
     "style": "gown"
   }
+
 ]
 }
